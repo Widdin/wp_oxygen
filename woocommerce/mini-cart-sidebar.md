@@ -1,19 +1,26 @@
 Minicart Sidebar
 
-1. Create a Div
+1. Create a Div, advanced → Custom CSS:
     ```
     width: 300px;
     display: flex;
     flex-direction: column;
+    z-index: 1;
+    position: fixed;
+    right: 0;
+    top: 0;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.1);
+    transition: all 0.5s ease-in-out;
     ```
     
-
 2. Inside the Div, add Wordpress → Widgets → Cart
+
 3. Inside the Div, add a Code Block
     ```
     display: none;
     visibility: hidden;
     ```
+    
 4. Inside the Code Block, add:
     ```
     .widget.woocommerce.widget_shopping_cart {
@@ -34,10 +41,11 @@ Minicart Sidebar
         overflow-x: hidden;
         scroll-snap-type: y mandatory;
     }
-    
+
     .widget.woocommerce .widget_shopping_cart_content .cart_list li {
         scroll-snap-align: center;
     }
+
 
     /* Product Title */
     .woocommerce .widget_shopping_cart_content ul.product_list_widget li a {
@@ -46,6 +54,7 @@ Minicart Sidebar
         font-weight: 400;
         line-height: 1.7;
         text-transform: uppercase;
+        overflow-wrap: break-word;
     }
 
     /* Product Quantity */
@@ -57,6 +66,11 @@ Minicart Sidebar
     .woocommerce-Price-amount.amount {
         color: #ff4000;
         font-size: 13px;
+    }
+
+    /* Subtotal Price */
+    .woocommerce-mini-cart__total .woocommerce-Price-amount {
+        float: right;
     }
 
     /* Product Delete Cross */
@@ -84,9 +98,12 @@ Minicart Sidebar
         color: white;
     }
 
+    /* Subtotal */
     .woocommerce.widget_shopping_cart .total {
-        border-top: none;
         background-color: #f2f2f2;
+        margin: 0px;
+        padding: 15px !important;
+        border-top: 1px solid #dedcdc;
     }
 
     /* Checkout Button */
@@ -103,6 +120,7 @@ Minicart Sidebar
         margin-left: 10px;
     }
     ```
+    
 5. Add an Icon anywhere on the page, advanced → JavaScript: 
     ```
     jQuery( document ).ready(function() {
