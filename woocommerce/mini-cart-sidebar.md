@@ -1,0 +1,1 @@
+Minicart Sidebar
