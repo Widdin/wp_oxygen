@@ -15,13 +15,9 @@ Minicart Sidebar
     
 2. Inside the Div, add Wordpress → Widgets → Cart
 
-3. Inside the Div, add a Code Block
-    ```
-    display: none;
-    visibility: hidden;
-    ```
+3. Inside the Div, add a Code Block, advanced → Layout → `Display` to `none` and `Visibility` to `hidden`
     
-4. Inside the Code Block, add:
+4. On the Code Block, add CSS:
     ```
     .widget.woocommerce.widget_shopping_cart {
         height: 100%;
