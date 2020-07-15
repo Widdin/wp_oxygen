@@ -1,5 +1,5 @@
-# Minicart Sidebar for Woocommerce
-![Image of Minicart](images/mini-cart-sidebar.png)
+# Off-canvas Cart for Woocommerce
+![Image of Minicart](images/off-canvas-cart.png)
 
 1. Create a Div, advanced → Custom CSS:
     ```
