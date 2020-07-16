@@ -29,7 +29,7 @@ Example:
 6. Set the title and press `Save changes and activate`
 
 
-### Shortcodes  
+## Shortcodes  
 ###### *(Oxygen → Templates → Add New Reusable Part → `+Shortcodes` → Paste the code → Go to your Page, Add → Reusable)*
 #### Example One  
 ![Example 1](images/show_total_cart_ex1.PNG)
