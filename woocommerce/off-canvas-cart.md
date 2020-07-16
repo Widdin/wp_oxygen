@@ -11,3 +11,17 @@
     ```
 4. Save
 5. Go to your Page, Add → Reusable → `Off-Canvas Cart`
+6. If you want to toggle the Off-Canvas Cart, add any object and insert this JavaScript-code:
+    ```
+    jQuery( document ).ready(function() {
+        jQuery('#id_of_the_object').click(function(){
+          var div = jQuery('#off_canvas_cart')
+            if (div.css('transform') == 'none') {
+                 div.css('transform', 'translate(100%,0)');
+            } else {
+                div.css('transform', 'none');
+            }
+        });
+    });
+
+    ```
