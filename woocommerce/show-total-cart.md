@@ -1,5 +1,7 @@
 # Show Total Cart for Woocommerce
-
+Example:  
+![Example 1](images/show_total_cart_ex1.PNG)  
+![Example 2](images/show_total_cart_ex2.PNG)
 ## Tutorial
 1. Add → Code Block   
 2. Insert into `PHP & HTML`:
