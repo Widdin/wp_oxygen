@@ -11,3 +11,4 @@
     ```
 4. Save
 5. Go to your Page, Add → Reusable → `Drop-Down Cart`
+6. Add the class `drop-down-cart` to any object you want to hover over to show the Cart.
