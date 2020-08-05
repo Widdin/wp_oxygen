@@ -1,4 +1,5 @@
 # Scroll To Top
+![Gif of Scroll To Top](images/scroll-to-top.gif)  
 
 ## Tutorial
 1. Oxygen → Templates → Add New Reusable Part  
