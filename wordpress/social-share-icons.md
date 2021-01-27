@@ -1,5 +1,6 @@
 # Social Share Icons
-
+Shares the current page as:  
+![Image of Sharing on Reddit](images/social-share-icons-reddit.png)
 
 ## Tutorial
 1. Oxygen → Templates → Add New Reusable Part  
