@@ -1,4 +1,6 @@
 # Social Share Icons
+Available icons are:  
+![Image of Share Icons](images/social-share-icons.png)  
 Shares the current page as:  
 ![Image of Sharing on Reddit](images/social-share-icons-reddit.png)
 
