@@ -3,7 +3,7 @@ This will display the latest modified date of posts.
 It can be used on single post templates and also inside 
 repeaters for showing how recent each post in the list is.
 
-The first image is **relative** and the second is **absolute**.
+The first image is **relative** and the second is **absolute**.  
 ![Image of Post Modified Date](images/post-modified-date.png)
 
 ## Tutorial
