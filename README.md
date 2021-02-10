@@ -5,6 +5,7 @@
  * [Countdown Timer](wordpress/countdown-timer.md)
  * [Scroll To Top](wordpress/scroll-to-top.md)
  * [Social Share Icons](wordpress/social-share-icons.md)
+ * [Post Modified Date](wordpress/post-modified-date.md)
  
 ### [Woocommerce](woocommerce)
  * [Off-Canvas Cart](woocommerce/off-canvas-cart.md)
