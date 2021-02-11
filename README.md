@@ -7,6 +7,7 @@
  * [Social Share Icons](wordpress/social-share-icons.md)
  * [Post Modified Date](wordpress/post-modified-date.md)
  * [Post Reading Time](wordpress/post-reading-time.md)
+ * [Pricing Table Switch](wordpress/pricing-table-switch.md)
  
 ### [Woocommerce](woocommerce)
  * [Off-Canvas Cart](woocommerce/off-canvas-cart.md)
