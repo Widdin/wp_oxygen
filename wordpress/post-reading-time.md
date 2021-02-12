@@ -11,22 +11,31 @@ repeaters for showing how long each post takes to read.
 3. Add the following code and press ``Apply Code``  
 ```php
 <?php
-    global $post;
+global $post;
 
-    $words_per_minute = 250;
+$exclude_images = false;
+$words_per_minute = 265;
 
-    $content = $post->post_content;
+$content = $post->post_content;
 
-    $word_count = str_word_count(strip_tags($content));
+$image_count = substr_count( $content, '<img' );
+$word_count = str_word_count(strip_tags($content));
 
-    $reading_time = ceil($word_count / $words_per_minute);
+$image_time = 0;
+if (!$exclude_images) {
+  for ($i = 1; $i <= $image_count; $i++) {
+    $image_time += ($i < 10) ? 12 - ($i - 1) : 3;
+  }
+}
 
-    if ($reading_time == 1) {
-      $text = " minute";
-    } else {
-      $text = " minutes";
-    }
+$reading_time = ceil(($word_count / $words_per_minute) + ($image_time / 60));
 
-    echo 'Reading time < ' . $reading_time . $text;
+if ($reading_time == 1) {
+  $text = " minute";
+} else {
+  $text = " minutes";
+}
+
+echo 'Reading time < ' . $reading_time . $text;
 ?>
 ```
