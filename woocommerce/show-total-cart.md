@@ -6,25 +6,37 @@ Example:
 1. Add → Code Block   
 2. Insert into `PHP & HTML`:
     ```HTML
-   <div class="cart-count">
-     <?php echo WC()->cart->get_cart_contents_count();?>
-   </div>
+ <?php 
+	$display = '';
+
+	if ( ! WC()->cart->get_cart_contents_count() > 0 ) {
+		$display = 'style="display: none;"';
+	}
+?>
+<a href="<?php echo esc_url( wc_get_cart_url() ); ?>">
+ <?php echo sprintf ( _n( '<div class="cart-count"'. $display .'>%d </div>','<div class="cart-count"'. $display .'>%d </div>',WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>
+</a>
+<?php
+?>
     ```
 3. Install [Code Snippets](https://wordpress.org/plugins/code-snippets/)  
 4. Snippets → Add New
 5. Insert into `Code`:
     ```PHP
-    add_filter('woocommerce_add_to_cart_fragments', function($fragments) {
-    ob_start();
-    ?>
+  add_filter('woocommerce_add_to_cart_fragments', function($fragments) {
+ob_start();
+	$display = '';
 
-    <div class="cart-count">
-      <?php echo WC()->cart->get_cart_contents_count(); ?>
-    </div>
-
-    <?php $fragments['div.cart-count'] = ob_get_clean();
-    return $fragments;
-    });
+	if ( ! WC()->cart->get_cart_contents_count() > 0 ) {
+		$display = 'style="display: none;"';
+	}
+?>
+<a href="<?php echo esc_url( wc_get_cart_url() ); ?>">
+ <?php echo sprintf ( _n( '<div class="cart-count"'. $display .'>%d </div>','<div class="cart-count"'. $display .'>%d </div>',WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>
+</a>
+<?php $fragments['div.cart-count'] = ob_get_clean();
+return $fragments;
+});
     ```
 6. Set the title and press `Save changes and activate`
 
