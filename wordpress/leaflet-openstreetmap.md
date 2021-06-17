@@ -2,14 +2,8 @@
 ![Image of Leaflet OpenStreetMap](images/leaflet-openstreetmap.png)  
 
 ## Tutorial
-1. Enqueue JavaScript & CSS scripts by installing the plugin `Code Snippets`, `Add New` and insert:
-```php
-function enqueue_leaflet() {
-	wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css');
-	wp_enqueue_script('leaflet', 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js');
-}
-add_action( 'wp_enqueue_scripts', 'enqueue_leaflet' );
-```
+1. Download files from Leaflet [here](https://leafletjs.com/download.html) and 
+enqueue JavaScript & CSS by following [Enqueue Scripts & CSS](enqueue-scripts-css.md)
 2. Create a `Div` and:  
 	- Set `id` → `map`
 	- Set `width` → `100%`

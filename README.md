@@ -1,6 +1,7 @@
 ## Tutorials for [Oxygen Builder](https://oxygenbuilder.com/)
 
 ### [Wordpress](wordpress)
+ * [Enqueue Scripts & CSS](wordpress/enqueue-scripts-css.md)
  * [Scroll Indicator](wordpress/scroll-indicator.md)
  * [Countdown Timer](wordpress/countdown-timer.md)
  * [Scroll To Top](wordpress/scroll-to-top.md)
