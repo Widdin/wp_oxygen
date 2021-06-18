@@ -8,19 +8,19 @@ enqueue JavaScript & CSS by following [Enqueue Scripts & CSS](enqueue-scripts-cs
 	- Set `id` → `map`
 	- Set `width` → `100%`
 	- Set `height` → `300px`
-3. Go to `Div` → `JavaScript` and insert:  
-```javascript
-var latitude = 51.505;
-var longitude = -0.09;
-var zoom = 13;
+	- Add `JavaScript` →
+		```javascript
+		var latitude = 51.505;
+		var longitude = -0.09;
+		var zoom = 13;
 
-// Initialize the map
-var map = L.map('mapid').setView([latitude, longitude], zoom);
+		// Initialize the map
+		var map = L.map('mapid').setView([latitude, longitude], zoom);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-```
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
+		```
 
 
 Add markers, circles and polygons
