@@ -10,6 +10,7 @@
  * [Post Reading Time](wordpress/post-reading-time.md)
  * [Pricing Table Switch](wordpress/pricing-table-switch.md)
  * [Leaflet OpenStreetMap](wordpress/leaflet-openstreetmap.md)
+ * [Flickity Carousel](wordpress/flickity-carousel.md)
  
 ### [Woocommerce](woocommerce)
  * [Off-Canvas Cart](woocommerce/off-canvas-cart.md)
