@@ -70,7 +70,7 @@ var customIcon = L.icon({
     iconSize: [45, 45]
 });
 
-var marker = L.marker([latitude, longitude], {icon: greenIcon}).addTo(map)
+var marker = L.marker([latitude, longitude], {icon: customIcon}).addTo(map)
 ```
 * Read more *[here](https://leafletjs.com/examples/custom-icons/)*
 
