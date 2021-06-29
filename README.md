@@ -11,6 +11,7 @@
  * [Pricing Table Switch](wordpress/pricing-table-switch.md)
  * [Leaflet OpenStreetMap](wordpress/leaflet-openstreetmap.md)
  * [Flickity Carousel](wordpress/flickity-carousel.md)
+ * [Tippy Tooltip](wordpress/tippy-tooltip.md)
  
 ### [Woocommerce](woocommerce)
  * [Off-Canvas Cart](woocommerce/off-canvas-cart.md)
