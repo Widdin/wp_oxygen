@@ -17,3 +17,6 @@
  * [Off-Canvas Cart](woocommerce/off-canvas-cart.md)
  * [Show Total Cart](woocommerce/show-total-cart.md)
  * [Drop-Down Cart](woocommerce/drop-down-cart.md)
+ * [Change 'You may also like'](woocommerce/you-may-also-like.md)
+ * [Change 'You may be interested in'](woocommerce/you-may-be-interested-in.md)
+ 
