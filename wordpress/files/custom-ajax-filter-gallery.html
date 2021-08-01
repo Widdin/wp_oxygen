@@ -1,0 +1,32 @@
+<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
+	<?php
+		$posts = get_posts( array( 'post_type' => 'gallery' ) );
+				
+		if ($posts) {
+			
+			echo '<div class="radio-toolbar">';
+			  
+				$output = '';
+				$gallery_total_size = 0;
+			
+				foreach($posts as $post) {    
+					$gallery_size = sizeof($post->gallery);
+					$gallery_total_size += $gallery_size;
+					
+					$input = '<input id="' . $post->post_title . '" type="radio" class="gallery-filter" name="gallery_category" value="' . $post->ID . '" />';
+					$label =  '<label for="' . $post->post_title . '" class="radio-filter">' . $post->post_title . " (" . $gallery_size . ') </label>';
+					$output .= $input . $label;
+				}
+				
+				echo '<input id="all" type="radio" class="gallery-filter" name="gallery_category" value="-1" checked />';
+				echo '<label for="all">All (' . $gallery_total_size . ')</label>';
+			
+				echo $output;
+			
+			echo '</div>';
+		}
+	?>
+	<input type="hidden" name="action" value="customfilter">
+</form>
+
+<div id="response" class="gallery" />

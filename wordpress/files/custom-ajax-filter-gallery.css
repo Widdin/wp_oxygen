@@ -1,0 +1,97 @@
+/* Gallery */
+.gallery {
+	width: 100%;
+
+	display: grid;
+	grid-auto-rows: 1fr;
+	grid-auto-columns: 1fr;
+	align-items: stretch;
+	grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+}
+
+.gallery-image {
+	width: 100%;
+	object-fit: cover;
+}
+
+/* Animations */
+.fadeIn {
+	animation-name: fadeIn;
+	animation-duration: 0.8s;
+	animation-timing-function: ease;
+}
+
+.fadeOut {
+	animation-name: fadeOut;
+	animation-duration: 0.4s;
+	animation-timing-function: ease;
+
+	opacity: 0;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	5% {
+		opacity: .75;
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0);
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	5% {
+		opacity: .75;
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* Radio buttons */
+.radio-toolbar {
+	width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 40px;
+}
+
+.radio-toolbar input[type="radio"] {
+	display: none;
+}
+
+.radio-toolbar label {
+	border-color: #ccc;
+	border-radius: 4px;
+	border-style: solid;
+	border-width: 2px;
+
+	margin: 8px 8px 0px 0;
+	padding: 4px 11px;
+
+	font-size: 16px;
+	font-family: 'Poppins';
+
+	cursor: pointer;
+}
+
+.radio-toolbar input[type="radio"]:checked+label {
+	background-color: #0069ff;
+	border-color: #0069ff;
+	color: white;
+}
