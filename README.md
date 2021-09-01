@@ -1,4 +1,4 @@
-## Tutorials for [Oxygen Builder](https://oxygenbuilder.com/)
+## 🎓 Tutorials for [Oxygen Builder](https://oxygenbuilder.com/)
 
 ### [Wordpress](wordpress)
  * [Enqueue Scripts & CSS](wordpress/enqueue-scripts-css.md)
@@ -12,7 +12,7 @@
  * [Leaflet OpenStreetMap](wordpress/leaflet-openstreetmap.md)
  * [Flickity Carousel](wordpress/flickity-carousel.md)
  * [Tippy Tooltip](wordpress/tippy-tooltip.md)
- * [Custom AJAX Filter (Image Gallery)](wordpress/custom-ajax-filter-gallery.md)
+ * [Custom AJAX Filter (Image Gallery) + Lazy Loading](wordpress/custom-ajax-filter-gallery.md)
  
 ### [Woocommerce](woocommerce)
  * [Off-Canvas Cart](woocommerce/off-canvas-cart.md)
@@ -20,3 +20,6 @@
  * [Drop-Down Cart](woocommerce/drop-down-cart.md)
  * [Change 'You may also like'](woocommerce/you-may-also-like.md)
  * [Change 'You may be interested in'](woocommerce/you-may-be-interested-in.md)
+
+## ❤️ Donate
+If you appreciate my work and wish to donate, [PayPal](https://www.paypal.com/paypalme/widdin)
