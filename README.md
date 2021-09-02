@@ -1,4 +1,6 @@
 ## 🎓 Tutorials for [Oxygen Builder](https://oxygenbuilder.com/)
+Free tutorials for the WordPress plugin Oxygen Builder. Includes both WordPress and WooCommerce.  
+If you find the tutorials interesting, click on the star ⭐ in the top-right corner of the page! 
 
 ### [Wordpress](wordpress)
  * [Enqueue Scripts & CSS](wordpress/enqueue-scripts-css.md)
@@ -15,9 +17,10 @@
  * [Custom AJAX Filter (Image Gallery) + Lazy Loading](wordpress/custom-ajax-filter-gallery.md)
  
 ### [Woocommerce](woocommerce)
- * [Off-Canvas Cart](woocommerce/off-canvas-cart.md)
- * [Show Total Cart](woocommerce/show-total-cart.md)
- * [Drop-Down Cart](woocommerce/drop-down-cart.md)
+ * Cart
+   * [Off-Canvas Cart](woocommerce/off-canvas-cart.md)
+   * [Show Total Cart](woocommerce/show-total-cart.md)
+   * [Drop-Down Cart](woocommerce/drop-down-cart.md)
  * [Change 'You may also like'](woocommerce/you-may-also-like.md)
  * [Change 'You may be interested in'](woocommerce/you-may-be-interested-in.md)
 
