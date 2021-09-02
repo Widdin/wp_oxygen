@@ -1,4 +1,4 @@
-# Custom AJAX Filter (Image Gallery)
+# Custom AJAX Filter (Image Gallery) + Lazy Loading
 ![Gif of Custom AJAX Filter](images/custom-ajax-filter-gallery.gif)  
 
 ## Description
@@ -75,8 +75,11 @@ In this tutorial, I will show you how to make an image gallery with
 
 			$output = '';
 			foreach($images as $id) {
-				$img = wp_get_attachment_image_src($id, 'full');
-				$output .= '<img class="gallery-image" src="' . esc_url($img[0]) . '" loading="lazy" />';
+				$src 	= wp_get_attachment_image_url( $id, 'full' );
+				$srcset = wp_get_attachment_image_srcset( $id, 'full' );
+				$sizes 	= wp_get_attachment_image_sizes( $id, 'full' );
+				
+				$output .= '<img style="min-height:500px;" class="lazy loading gallery-image" data-src="'. $src .'" data-srcset="' . $srcset . '" sizes="' . $sizes . '" />';
 			}
 			echo $output;
 
@@ -137,24 +140,45 @@ In this tutorial, I will show you how to make an image gallery with
 	---
 	The function `sendAJAX` is for sending a request when the form with the id `filter` is submitted, it will also receive the result. 
 	Before the request is sent (`beforeSend`), the class `fadeOut` is added to the gallery images so they fade out nicely.
-	When the data is received, the previous class is removed and a new one (`fadeIn`) is added. The data gets inserted to a div with the id `response`.
+	When the data is received, a new class (`fadeIn`) is added. The data gets inserted to a div with the id `response`.
 	The buttons gets disabled until there is new data available.
 	```javascript
 	function sendAJAX() {
 		var filter = jQuery('#filter');
+
 		jQuery.ajax({
 			url:filter.attr('action'),
 			data:filter.serialize(),
 			type:filter.attr('method'),
+			startTime:new Date().getTime(),
+			
 			beforeSend:function(xhr){
-				jQuery('.gallery-image').addClass('fadeOut');
 				disableButtons();
+				jQuery('.gallery-image').addClass('fadeOut');
 			},
+			
 			success:function(data){
-				jQuery('.gallery-image').removeClass('fadeOut');
-				jQuery('#response').html(data); // insert 
-				jQuery('.gallery-image').addClass('fadeIn');
-				enableButtons();
+				var endTime = new Date().getTime();
+				var totalTime = endTime - this.startTime;
+				var timeToWait = 0;
+				
+				if (totalTime >= 400) { 
+					timeToWait = 0; 
+				} else {
+					timeToWait = 400 - totalTime; 
+				}
+
+				setTimeout(function(){
+					jQuery('#response').html(data);
+					
+					updateObserver();
+					
+					setTimeout(function(){
+						enableButtons();
+					}, 800);
+					
+				}, timeToWait);
+				
 			}
 		});
 	}
@@ -162,20 +186,51 @@ In this tutorial, I will show you how to make an image gallery with
 	
 	This will call the `sendAJAX` function whenever a button is pressed.
 	```javascript
-	jQuery(function($){
-		$('.gallery-filter').change(function(){
-			sendAJAX();
-			return false;
-		});
+	$('.gallery-filter').change(function(){
+		sendAJAX();
+		return false;
 	});
 	```
 	
 	On pageload, load all images
 	```javascript
-	jQuery(function($){
-		sendAJAX();
-		return false;
+    sendAJAX();
+    return false;
+	```
+	
+	For the lazy-loading-part we make use of the [intersection observer](https://web.dev/lazy-loading-images/#images-inline-intersection-observer).
+	If the element is in the viewport, the src + srcset attributes are populated and then removed from the observer-list.
+	```javascript
+	lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+		entries.forEach(function(entry) {
+			if (entry.isIntersecting) {
+				let lazyImage = entry.target;
+				
+				lazyImage.src = lazyImage.dataset.src;
+				lazyImage.srcset = lazyImage.dataset.srcset;
+				lazyImage.style.minHeight = null;
+				
+				lazyImage.removeAttribute('data-src');
+				lazyImage.removeAttribute('data-srcset');
+				
+				lazyImage.classList.remove("lazy");
+				lazyImageObserver.unobserve(lazyImage);
+				
+				lazyImage.classList.add('fadeIn');
+				lazyImage.classList.remove("loading");
+			}
+		});
 	});
+	```
+	
+	Here we retrieve all the images with the class `lazy` and adds it to the observer.
+	```javascript
+	function updateObserver() {
+		let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+		lazyImages.forEach(function(lazyImage) {
+			lazyImageObserver.observe(lazyImage);
+		});
+	} 
 	```
 	
 	Functions to disable or enable the buttons.
@@ -205,15 +260,14 @@ In this tutorial, I will show you how to make an image gallery with
 
 		display: grid;
 		grid-auto-rows: 1fr;
-		grid-auto-columns: 1fr;
-		align-items: stretch;
-		grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+		grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
 		grid-column-gap: 10px;
 		grid-row-gap: 10px;
 	}
 
 	.gallery-image {
 		width: 100%;
+		height: 100%;
 		object-fit: cover;
 	}
 	```
@@ -233,35 +287,42 @@ In this tutorial, I will show you how to make an image gallery with
 
 		opacity: 0;
 	}
+	
+	.loading {
+		opacity: 0;
+	}
 
 	@keyframes fadeOut {
 		0% {
 			opacity: 1;
+			-webkit-transform: scale(1)
 		}
 
-		5% {
-			opacity: .75;
+		1% {
+			opacity: 0.5;
+			transform: scale(0.9)
 		}
 
 		100% {
 			opacity: 0;
-			transform: scale(0);
+			-webkit-transform: scale(0.8)
 		}
 	}
 
 	@keyframes fadeIn {
 		0% {
 			opacity: 0;
-			transform: scale(0);
+			-webkit-transform: scale(1)
 		}
 
-		5% {
-			opacity: .75;
+		1% {
+			opacity: 0.2;
+			transform: scale(0.2)
 		}
 
 		100% {
 			opacity: 1;
-			transform: scale(1);
+			-webkit-transform: scale(1)
 		}
 	}
 	```
@@ -302,6 +363,22 @@ In this tutorial, I will show you how to make an image gallery with
 	}
 	```
 	You can find the complete CSS file → [here](files/custom-ajax-filter-gallery.css)
+
+## Lightbox with Featherlight
+Enqueue JavaScript & CSS by following [Enqueue Scripts & CSS](enqueue-scripts-css.md) or place the following cdn inside the HTML part of a codeblock.
+```html
+<link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+<script src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+```
+
+Inside the code-snippet, replace
+```html
+$output .= '<img style="min-height:500px;" class="lazy loading gallery-image" data-src="'. $src .'" data-srcset="' . $srcset . '" sizes="' . $sizes . '" />';
+```
+with
+```html
+$output .= '<img data-featherlight="image" data-featherlight-target-attr="src" style="min-height:500px;" class="lazy loading gallery-image" data-src="'. $src .'" data-srcset="' . $srcset . '" sizes="' . $sizes . '" />';
+```
 
 ## Sources
 [[codex.wordpress](https://codex.wordpress.org/AJAX_in_Plugins)]
