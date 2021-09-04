@@ -2,13 +2,14 @@
 ![Gif of Custom AJAX Filter](images/custom-ajax-filter-gallery.gif)  
 
 ## Description
-In this tutorial, I will show you how to make an image gallery with
+In this tutorial, I will show you how to make an image gallery with a custom AJAX filter.  
+We will use:   
 * **Oxygen Builder**
 * **Custom Post Type UI**
 * **Code Snippets**  
 * **Advanced Custom Fields PRO**
 	* Using the **PRO** version because it has an image gallery field.
-
+	* You don't have ACF PRO? Checkout [Advanced Custom Fields PRO Alternatives](#advanced-custom-fields-pro-alternatives)
 
 ## Tutorial
 1. Install [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)
@@ -379,6 +380,48 @@ with
 ```html
 $output .= '<img data-featherlight="image" data-featherlight-target-attr="src" style="min-height:500px;" class="lazy loading gallery-image" data-src="'. $src .'" data-srcset="' . $srcset . '" sizes="' . $sizes . '" />';
 ```
+
+## Advanced Custom Fields PRO Alternatives
+
+### [Pods](https://sv.wordpress.org/plugins/pods/)
+Extend Existing
+	Content Type: Post Type
+	Post Type: Galleries
+	
+Manage Fields
+	Add Field
+		Label: Gallery
+		Name: gallery
+		Field Type: File / Image / Video
+		
+		Additional Field Options
+			Upload Limit: Multiple Files
+			
+Inside the code-snippet, replace
+```php
+$gallery = $query->post->gallery;
+
+if ($gallery) {
+	foreach($gallery as $image) {
+		array_push($images, $image);
+	}
+}
+```
+with
+```php
+$pod = pods('gallery', $query->post->ID);
+
+$gallery = $pod->field('gallery');
+
+if($gallery) {
+	foreach ($gallery as $image) {
+		array_push($images, $image['ID']);
+	}
+}
+```
+
+### [Meta Box](https://metabox.io/)
+TODO
 
 ## Sources
 [[codex.wordpress](https://codex.wordpress.org/AJAX_in_Plugins)]
