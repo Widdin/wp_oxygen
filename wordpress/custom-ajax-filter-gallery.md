@@ -384,18 +384,16 @@ $output .= '<img data-featherlight="image" data-featherlight-target-attr="src" s
 ## Advanced Custom Fields PRO Alternatives
 
 ### [Pods](https://sv.wordpress.org/plugins/pods/)
-Extend Existing
-	Content Type: Post Type
-	Post Type: Galleries
-	
-Manage Fields
-	Add Field
-		Label: Gallery
-		Name: gallery
-		Field Type: File / Image / Video
+* `Pods` → `Extend Existing`
+	* Content Type: `Post Type`
+	* Post Type: `Galleries`
 		
-		Additional Field Options
-			Upload Limit: Multiple Files
+* `Manage Fields` → `Add Field`
+	* Label: `Gallery`
+	* Name: `gallery`
+	* Field Type: `File / Image / Video`
+	* Additional Field Options
+		* Upload Limit: `Multiple Files`
 			
 Inside the code-snippet, replace
 ```php
