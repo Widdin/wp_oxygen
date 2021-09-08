@@ -5,12 +5,12 @@
 ## Tutorial
 
 1. `+Add` → `Div`  
-	Add a class with the name`drop-down-cart` to the `Div`  
+	Add a class with the name `drop-down-cart` to the `Div`
 	
-2. Inside the `Div`:  
+2. Inside the `Div`,  
 	`+Add` → Icon  
 	`+Add` → `WordPress` → `Widgets` → `Cart`  
-		Remove the Title from Cart-Widget
+			Remove the Title from Cart-Widget
 
 3. Create a Code Block or Stylesheet and then add the css:
 	```css
