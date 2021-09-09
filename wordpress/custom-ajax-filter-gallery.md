@@ -419,7 +419,49 @@ if($gallery) {
 ```
 
 ### [Meta Box](https://metabox.io/)
-TODO
+* `Meta Box` → `Post Types` → `New Post Type`
+	* Plural name: `Galleries`
+	* Singular name: `Gallery`
+	* Slug: `gallery`
+	
+* `Meta Box` → `Custom Fields` → `Add New`
+	* `+ Add Field` → `Image Advanced`
+		* Change ID to `gallery`
+		* Settings → Location → Post Type → Select Gallery
+		
+Inside the code-snippet, replace
+```php
+$gallery = $query->post->gallery;
+
+if ($gallery) {
+	foreach($gallery as $image) {
+		array_push($images, $image);
+	}
+}
+```
+with
+```php
+$gallery = rwmb_meta( $field_id='gallery', array(), $post_id=$query->post->ID );
+
+if($gallery) {
+	foreach ($gallery as $image) {
+		array_push($images, $image['ID']);
+	}
+}
+```
+
+Inside PHP & HTML, replace
+```html
+$gallery_size = sizeof($post->gallery);
+```
+with 
+```html
+$gallery = rwmb_meta( $field_id='gallery', array(), $post_id=$post->ID);
+
+if (is_array($gallery)) {
+	$gallery_size = sizeof($gallery);
+}
+```
 
 ## Sources
 [[codex.wordpress](https://codex.wordpress.org/AJAX_in_Plugins)]
