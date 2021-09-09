@@ -451,11 +451,11 @@ if($gallery) {
 ```
 
 Inside PHP & HTML, replace
-```html
+```php
 $gallery_size = sizeof($post->gallery);
 ```
 with 
-```html
+```php
 $gallery = rwmb_meta( $field_id='gallery', array(), $post_id=$post->ID);
 
 if (is_array($gallery)) {
