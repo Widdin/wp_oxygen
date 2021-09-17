@@ -10,7 +10,12 @@
 				$gallery_total_size = 0;
 			
 				foreach($posts as $post) {    
-					$gallery_size = sizeof($post->gallery);
+				
+					$gallery_size = 0;
+					if (is_array($post->gallery)) {
+						$gallery_size = sizeof($post->gallery);
+					}
+					
 					$gallery_total_size += $gallery_size;
 					
 					$input = '<input id="' . $post->post_title . '" type="radio" class="gallery-filter" name="gallery_category" value="' . $post->ID . '" />';

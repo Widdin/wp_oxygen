@@ -113,8 +113,13 @@ We will use:
 				$output = '';
 				$gallery_total_size = 0;
 			
-				foreach($posts as $post) {    
-					$gallery_size = sizeof($post->gallery);
+				foreach($posts as $post) {   
+				
+					$gallery_size = 0;
+					if (is_array($post->gallery)) {
+						$gallery_size = sizeof($post->gallery);
+					}
+					
 					$gallery_total_size += $gallery_size;
 					
 					$input = '<input id="' . $post->post_title . '" type="radio" class="gallery-filter" name="gallery_category" value="' . $post->ID . '" />';
@@ -452,7 +457,9 @@ if($gallery) {
 
 Inside PHP & HTML, replace
 ```php
-$gallery_size = sizeof($post->gallery);
+if (is_array($post->gallery)) {
+	$gallery_size = sizeof($post->gallery);
+}
 ```
 with 
 ```php
