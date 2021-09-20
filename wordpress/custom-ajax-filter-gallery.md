@@ -2,14 +2,14 @@
 ![Gif of Custom AJAX Filter](images/custom-ajax-filter-gallery.gif)  
 
 ## Description
-In this tutorial, I will show you how to make an image gallery with a custom AJAX filter.  
+In this tutorial, I will show you how to make an image gallery with a custom AJAX filter and built-in lazy loading!
 We will use:   
 * **Oxygen Builder**
 * **Custom Post Type UI**
 * **Code Snippets**  
 * **Advanced Custom Fields PRO**
 	* Using the **PRO** version because it has an image gallery field.
-	* You don't have ACF PRO? Checkout [Advanced Custom Fields PRO Alternatives](#advanced-custom-fields-pro-alternatives)
+	* If you don't have **ACF PRO**, checkout [Advanced Custom Fields PRO Alternatives](#advanced-custom-fields-pro-alternatives)
 
 ## Tutorial
 1. Install [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)
