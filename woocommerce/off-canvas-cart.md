@@ -14,7 +14,7 @@
             * Remove the Cart Title
 			
 	In the end it should look like this,  
-	![Image of structure](images/off-canvas-cart-structure.png)
+	![Image of structure](images/off-canvas-cart-structure.PNG)
 		
 2. Create a Code Block or a Stylesheet and then add the following css:
 	```css
