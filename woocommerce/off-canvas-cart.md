@@ -1,26 +1,196 @@
 # Off-Canvas Cart for Woocommerce
-![Image of Cart](images/off-canvas-cart.png)
+![Image of Cart](images/off-canvas-cart.gif)
 
 
 ## Tutorial
-1. Oxygen → Templates → Add New Reusable Part  
-2. Add title `Off-Canvas Cart`  
-3. Click on ``+Shortcodes`` and insert:
-    ```
-    [ct_div_block ct_sign_sha256='123' ct_options='{"ct_id":1,"ct_parent":0,"selector":"off_canvas_cart","original":{"width":"300","height-unit":"%","height":"100","top":"0","right":"0","position":"fixed","z-index":"1","custom-js":"","custom-css":"Ym94LXNoYWRvdzogMCAzcHggNXB4IDAgcmdiYSgwLDAsMCwuMSk7CiAgICB0cmFuc2l0aW9uOiBhbGwgMC41cyBlYXNlLWluLW91dDs=","background-color":"#ffffff","display":"flex","flex-direction":"column"},"activeselector":false}'][ct_div_block_2 ct_sign_sha256='123' ct_options='{"ct_id":2,"ct_parent":1,"selector":"off_canvas_cart_header","original":{"width-unit":"%","width":"100","height-unit":"%","flex-direction":"row","display":"flex","align-items":"center","justify-content":"space-between","text-align":"justify","border-bottom-color":"#d8d8d8","border-bottom-width":"1","border-bottom-style":"solid","margin-bottom":"5","height":"7"},"activeselector":false}'][ct_text_block ct_sign_sha256='123' ct_options='{"ct_id":3,"ct_parent":2,"selector":"off_canvas_cart_text","original":{"padding-bottom":"15","padding-top":"15","padding-left":"15","padding-right":"15","font-size":"15","color":"#404040","font-weight":"600"},"activeselector":false}']My Bag[/ct_text_block][ct_fancy_icon ct_sign_sha256='123' ct_options='{"ct_id":4,"ct_parent":2,"selector":"off_canvas_cart_close","original":{"icon-size":"20","icon-id":"FontAwesomeicon-close","padding-top":"15","padding-left":"15","padding-right":"15","padding-bottom":"15","height-unit":"%","icon-color":"#404040","custom-js":"alF1ZXJ5KCBkb2N1bWVudCApLnJlYWR5KGZ1bmN0aW9uKCkgewogICAgalF1ZXJ5KCcjb2ZmX2NhbnZhc19jYXJ0X2Nsb3NlJykuY2xpY2soZnVuY3Rpb24oKXsKICAgICAgdmFyIGRpdiA9IGpRdWVyeSgnI29mZl9jYW52YXNfY2FydCcpCiAgICAgICAgaWYgKGRpdi5jc3MoJ3RyYW5zZm9ybScpID09ICdub25lJykgewogICAgICAgICAgICAgZGl2LmNzcygndHJhbnNmb3JtJywgJ3RyYW5zbGF0ZSgxMDAlLDApJyk7CiAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgZGl2LmNzcygndHJhbnNmb3JtJywgJ25vbmUnKTsKICAgICAgICB9CiAgICB9KTsKfSk7"},"activeselector":false}'][/ct_fancy_icon][/ct_div_block_2][ct_widget ct_sign_sha256='123' ct_options='{"ct_id":5,"ct_parent":1,"selector":"off_canvas_cart_widget","original":{"class_name":"WC_Widget_Cart","id_base":"woocommerce_widget_cart","pretty_name":"Cart","instance":{"title":"","_ajax_linking_nonce":"ZWJlM2QxOGFjMQ==","hide_if_empty":false},"paramsBase64":true,"flex-direction":"unset","max-height-unit":"%","height":"93","height-unit":"%","width":"100"},"ct_widget":"true","nicename":"Cart (#19)","activeselector":false}'][/ct_widget][ct_code_block ct_sign_sha256='123' ct_options='{"ct_id":6,"ct_parent":1,"selector":"off_canvas_cart_codeblock","original":{"code-css":"LndpZGdldC53b29jb21tZXJjZS53aWRnZXRfc2hvcHBpbmdfY2FydCB7CiAgICBoZWlnaHQ6IDEwMCU7CiAgICB3aWR0aDogMTAwJTsKfQoKLndpZGdldCAud2lkZ2V0X3Nob3BwaW5nX2NhcnRfY29udGVudCB7CiAgICBoZWlnaHQ6IDEwMCU7CiAgICB3aWR0aDogMTAwJTsKICAgIGRpc3BsYXk6IGZsZXg7CiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uOwp9Cgoud29vY29tbWVyY2UgLndpZGdldF9zaG9wcGluZ19jYXJ0X2NvbnRlbnQgdWwucHJvZHVjdF9saXN0X3dpZGdldCB7CiAgICBmbGV4LWdyb3c6IDE7CiAgICBvdmVyZmxvdy15OiBhdXRvOwogICAgb3ZlcmZsb3cteDogaGlkZGVuOwogICAgc2Nyb2xsLXNuYXAtdHlwZTogeSBtYW5kYXRvcnk7Cn0KCi53aWRnZXQud29vY29tbWVyY2UgLndpZGdldF9zaG9wcGluZ19jYXJ0X2NvbnRlbnQgLmNhcnRfbGlzdCBsaSB7CiAgICBzY3JvbGwtc25hcC1hbGlnbjogY2VudGVyOwp9CgoKLyogUHJvZHVjdCBUaXRsZSAqLwoud29vY29tbWVyY2UgLndpZGdldF9zaG9wcGluZ19jYXJ0X2NvbnRlbnQgdWwucHJvZHVjdF9saXN0X3dpZGdldCBsaSBhIHsKICAgIGNvbG9yOiAjMjcyNzI4OwogICAgZm9udC1zaXplOiAxM3B4OwogICAgZm9udC13ZWlnaHQ6IDQwMDsKICAgIGxpbmUtaGVpZ2h0OiAxLjc7CiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOwogICAgb3ZlcmZsb3ctd3JhcDogYnJlYWstd29yZDsKfQoKLyogUHJvZHVjdCBRdWFudGl0eSAqLwoud2lkZ2V0X3Nob3BwaW5nX2NhcnRfY29udGVudCAud29vY29tbWVyY2UtbWluaS1jYXJ0IC53b29jb21tZXJjZS1taW5pLWNhcnQtaXRlbSAucXVhbnRpdHkgewogICAgZm9udC1zaXplOiAxM3B4Owp9CgovKiBQcm9kdWN0IFByaWNlICovCi53b29jb21tZXJjZS1QcmljZS1hbW91bnQuYW1vdW50IHsKICAgIGNvbG9yOiAjZmY0MDAwOwogICAgZm9udC1zaXplOiAxM3B4Owp9CgovKiBTdWJ0b3RhbCBQcmljZSAqLwoud29vY29tbWVyY2UtbWluaS1jYXJ0X190b3RhbCAud29vY29tbWVyY2UtUHJpY2UtYW1vdW50IHsKICAgIGZsb2F0OiByaWdodDsKfQoKLyogUHJvZHVjdCBEZWxldGUgQ3Jvc3MgKi8KLndpZGdldC53b29jb21tZXJjZSAud2lkZ2V0X3Nob3BwaW5nX2NhcnRfY29udGVudCAuY2FydF9saXN0IGxpIGEucmVtb3ZlIHsKICAgIGJhY2tncm91bmQtY29sb3I6ICNFRkVGRUY7CiAgICB3aWR0aDogMTVweDsKICAgIGhlaWdodDogMTVweDsKICAgIGxpbmUtaGVpZ2h0OiAxNXB4OwogICAgZm9udC1zaXplOiAxNHB4OwogICAgY29sb3I6ICNGRjAwMDAgIWltcG9ydGFudDsKICAgIG1hcmdpbi1yaWdodDogMTBweDsKfQoKLndpZGdldCAud2lkZ2V0X3Nob3BwaW5nX2NhcnRfY29udGVudCAud29vY29tbWVyY2UtbWluaS1jYXJ0X19idXR0b25zIHsKICAgIGZsZXgtZGlyZWN0aW9uOiB1bnNldDsKICAgIG1hcmdpbi10b3A6IDBweDsKICAgIG1hcmdpbi1ib3R0b206IDBweDsKICAgIGJhY2tncm91bmQtY29sb3I6ICNmMmYyZjIKfQoKLndvb2NvbW1lcmNlLndpZGdldF9zaG9wcGluZ19jYXJ0IC5idXR0b25zIGEgewogICAgYm9yZGVyOiBub25lOwogICAgYm9yZGVyLXJhZGl1czogMHB4OwogICAgYmFja2dyb3VuZC1jb2xvcjogIzY2NjY2NjsKICAgIGNvbG9yOiB3aGl0ZTsKfQoKLyogU3VidG90YWwgKi8KLndvb2NvbW1lcmNlLndpZGdldF9zaG9wcGluZ19jYXJ0IC50b3RhbCB7CiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjJmMmYyOwogIAltYXJnaW46IDBweDsKICAJcGFkZGluZzogMTVweCAhaW1wb3J0YW50OwogICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNkZWRjZGM7Cn0KCi8qIENoZWNrb3V0IEJ1dHRvbiAqLwoud2lkZ2V0Lndvb2NvbW1lcmNlIC53aWRnZXRfc2hvcHBpbmdfY2FydF9jb250ZW50IC5idXR0b25zIGEuY2hlY2tvdXQgewogICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmOGM1ZTsKfQoKLyogVGh1bWJuYWlsICovCi53b29jb21tZXJjZSAud2lkZ2V0X3Nob3BwaW5nX2NhcnRfY29udGVudCB1bC5wcm9kdWN0X2xpc3Rfd2lkZ2V0IGxpIGEgaW1nIHsKICAgIHdpZHRoOiA0NXB4OwogICAgbWFyZ2luLXRvcDogNXB4OwogICAgbWFyZ2luLWJvdHRvbTogNXB4OwogICAgbWFyZ2luLXJpZ2h0OiAxNXB4OwogICAgbWFyZ2luLWxlZnQ6IDEwcHg7Cn0KCi8qIE5vIHByb2R1Y3RzIGluIHRoZSBjYXJ0LiAqLyAKLndvb2NvbW1lcmNlLW1pbmktY2FydF9fZW1wdHktbWVzc2FnZSB7CiAgCXRleHQtYWxpZ246IGNlbnRlcjsKfQ==","code-php":"","flex-direction":"unset","display":"none","visibility":"hidden"},"activeselector":false}'][/ct_code_block][/ct_div_block]
-    ```
-4. Save
-5. Go to your Page, Add → Reusable → `Off-Canvas Cart`
-6. If you want to toggle the Off-Canvas Cart, add any object and insert this JavaScript-code:
-    ```JS
-    jQuery( document ).ready(function() {
-        jQuery('#%%ELEMENT_ID%%').click(function(){
-          var div = jQuery('#off_canvas_cart')
-            if (div.css('transform') == 'none') {
-                 div.css('transform', 'translate(100%,0)');
-            } else {
-                div.css('transform', 'none');
-            }
-        });
-    });
-    ```
+1. Structure
+	* Add Div and give it a class with the name `off-canvas-cart-overlay`
+    * Add Div and give it a class with the name `off-canvas-cart`
+        * Inside this Div (`off-canvas-cart`), Add another Div and give it a class `off-canvas-cart-header`  
+            * Inside this Div (`off-canvas-cart-header`), Add Text and give it a class `off-canvas-cart-text`  
+            * Inside this Div (`off-canvas-cart-header`), Add Icon and give it a class `off-canvas-cart-close`  
+
+        * Inside this Div (`off-canvas-cart`), Add → WordPress → Widgets → Cart and give it a class `off-canvas-cart-widget`
+            * Remove the Cart Title
+			
+	In the end it should look like this,  
+	![Image of structure](images/off-canvas-cart-structure.png)
+		
+2. Create a Code Block or a Stylesheet and then add the following css:
+	```css
+	.off-canvas-cart {
+		height: 100vh;
+		width: 350px;
+		
+		position: fixed;
+		right: 0;
+		top: 0;
+		
+		z-index: 999;
+		background-color: white;
+		
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		transform: translate(100%,0);
+	}
+
+	.cart-active {
+		transform: none;
+	}
+
+	.overflow-hidden {
+		overflow: hidden;
+	}
+
+	.off-canvas-cart-overlay {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		
+		z-index: 998;
+		background: rgba(0,0,0,.5);
+		
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.overlay-active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.off-canvas-cart-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		border-bottom-color: #e2e2e2;
+	}
+
+	.off-canvas-cart-text {
+		padding: 20px;
+	}
+
+	.off-canvas-cart-close {
+		margin: 10px;
+		width: 25px;
+	}
+
+	.off-canvas-cart-widget {
+		height: 100%;
+	}
+
+	.widget.woocommerce.widget_shopping_cart {
+		height: 100%;
+		width: 100%;
+	}
+
+	.widget .widget_shopping_cart_content {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.woocommerce .widget_shopping_cart_content ul.product_list_widget {
+		flex-grow: 1;
+		overflow-y: auto;
+		overflow-x: hidden;
+		scroll-snap-type: y mandatory;
+	}
+
+	.off-canvas-cart-widget li.mini_cart_item.woocommerce-mini-cart-item {
+		margin-top: 5px;
+	}
+
+	/* Product Title */
+	.woocommerce .widget_shopping_cart_content ul.product_list_widget li a {
+		color: #272728;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 1.7;
+		text-transform: uppercase;
+		overflow-wrap: break-word;
+	}
+
+	/* Product Quantity */
+	.off-canvas-cart-widget .woocommerce-mini-cart .woocommerce-mini-cart-item .quantity {
+		font-size: 13px;
+	}
+
+	/* Product Price */
+	.off-canvas-cart-widget .woocommerce-Price-amount.amount {
+		color: #ff4000;
+		font-size: 13px;
+	}
+
+	/* Product Delete Cross */
+	.off-canvas-cart-widget .widget_shopping_cart_content .cart_list li a.remove {
+		background-color: #EFEFEF;
+		width: 15px;
+		height: 15px;
+		line-height: 15px;
+		font-size: 14px;
+		color: #FF0000 !important;
+		margin-right: 10px;
+		margin-top: 4px;
+	}
+
+	.off-canvas-cart-widget .woocommerce-mini-cart__buttons {
+		flex-direction: unset;
+		margin: 0;
+	}
+
+	.off-canvas-cart-widget .woocommerce.widget_shopping_cart .buttons a {
+		border: none;
+		border-radius: 0px;
+		background-color: #666666;
+		color: white;
+		margin: 0;
+	}
+
+	/* Subtotal */
+	.off-canvas-cart-widget .woocommerce.widget_shopping_cart .total {
+		background-color: #f2f2f2;
+		margin: 0px;
+		padding: 15px;
+		border-top: 1px solid #dedcdc;
+	}
+
+	/* Checkout Button */
+	.off-canvas-cart-widget .widget_shopping_cart_content .buttons a.checkout {
+		background-color: #ff8c5e;
+	}
+
+	/* Thumbnail */
+	.off-canvas-cart-widget ul.product_list_widget li a img {
+		width: 80px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-right: 15px;
+		margin-left: 10px;
+	}
+
+	/* No products in the cart. */ 
+	.woocommerce-mini-cart__empty-message {
+		text-align: center;
+	}
+	```
+
+3. Create a new cart Icon somewhere on the page and give it a class `off-canvas-cart-open`.
+4. Add the following JavaScript to the new Icon:
+	```javascript
+	jQuery(document).ready(function($) {
+		$('.off-canvas-cart-open, .off-canvas-cart-overlay, .off-canvas-cart-close').click(function(){
+			$('.off-canvas-cart-overlay').toggleClass('overlay-active');
+			$('.off-canvas-cart').toggleClass('cart-active');
+			$('body').toggleClass('overflow-hidden');
+		});
+	});
+	```
