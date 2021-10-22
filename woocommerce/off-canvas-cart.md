@@ -183,7 +183,7 @@
 	}
 	```
 
-3. Create a new cart Icon somewhere on the page and give it a class `off-canvas-cart-open`.
+3. Create a new cart Icon somewhere on the page and give it a class `off-canvas-cart-open`
 4. Add the following JavaScript to the new Icon:
 	```javascript
 	jQuery(document).ready(function($) {

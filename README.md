@@ -15,6 +15,7 @@ If you find the tutorials interesting, click on the star ⭐ in the top-right co
  * [Flickity Carousel](wordpress/flickity-carousel.md)
  * [Tippy Tooltip](wordpress/tippy-tooltip.md)
  * [Custom AJAX Filter (Image Gallery) + Lazy Loading](wordpress/custom-ajax-filter-gallery.md)
+ * [Load Google Maps On Click](wordpress/load-gmaps-onclick.md)
  
 ### [Woocommerce](woocommerce)
  * Cart
