@@ -16,7 +16,7 @@ If you find the tutorials interesting, click on the star ⭐ in the top-right co
  * [Tippy Tooltip](wordpress/tippy-tooltip.md)
  * [Custom AJAX Filter (Image Gallery) + Lazy Loading](wordpress/custom-ajax-filter-gallery.md)
  * [Load Google Maps On Click](wordpress/load-gmaps-onclick.md)
- 
+ * [Next and Previous Post](wordpress/next-previous-post.md)
 ### [Woocommerce](woocommerce)
  * Cart
    * [Off-Canvas Cart](woocommerce/off-canvas-cart.md)
