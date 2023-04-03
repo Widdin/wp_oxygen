@@ -2,6 +2,8 @@
 ![Gif of Custom AJAX Filter](images/custom-ajax-filter-gallery.gif)  
 
 ## Description
+:warning: **Outdated:** New version available at [wp-oxygen-elements](https://github.com/Widdin/wp-oxygen-elements) :warning:  
+
 In this tutorial, I will show you how to make an image gallery with a custom AJAX filter and built-in lazy loading!
 We will use:   
 * **Oxygen Builder**
